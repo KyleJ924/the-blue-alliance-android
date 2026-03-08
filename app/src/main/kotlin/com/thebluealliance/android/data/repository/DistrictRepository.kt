@@ -46,6 +46,24 @@ class DistrictRepository @Inject constructor(
         }
     }
 
-    suspend fun getDistrictHistory(districtAbbreviation: String): List<Int> =
-        api.getDistrictHistory(districtAbbreviation).map { it.year }.sortedDescending()
+    suspend fun getDistrictHistory(districtAbbreviation: String): List<District> {
+        val abbrevs = getEquivalentAbbrev(districtAbbreviation)
+        return abbrevs.flatMap { abbrev ->
+            try {
+                api.getDistrictHistory(abbrev).map { it.toDomain() }
+            } catch (e: Exception) {
+                emptyList()
+            }
+        }.distinctBy { it.key }.sortedByDescending { it.year }
+    }
+
+    private fun getEquivalentAbbrev(abbrev: String): List<String> {
+        val groups = listOf(
+            setOf("chs", "fch"), // FIRST Chesapeake
+            setOf("mar", "fma"), // Mid-Atlantic
+            setOf("nc", "fnc"),  // North Carolina
+            setOf("in", "fin")   // Indiana
+        )
+        return groups.find { abbrev.lowercase() in it }?.toList() ?: listOf(abbrev)
+    }
 }

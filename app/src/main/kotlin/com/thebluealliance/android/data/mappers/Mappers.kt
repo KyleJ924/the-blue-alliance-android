@@ -250,6 +250,13 @@ fun DistrictDto.toEntity() = DistrictEntity(
     year = year,
 )
 
+fun DistrictDto.toDomain() = District(
+    key = key,
+    abbreviation = abbreviation,
+    displayName = displayName,
+    year = year,
+)
+
 fun DistrictEntity.toDomain() = District(
     key = key,
     abbreviation = abbreviation,

@@ -34,17 +34,38 @@ class DistrictRepositoryTest {
         )
         coEvery { api.getDistrictHistory("ne") } returns dtos
 
-        val years = repo.getDistrictHistory("ne")
+        val districts = repo.getDistrictHistory("ne")
 
-        assertEquals(listOf(2024, 2023, 2022), years)
+        assertEquals(2024, districts[0].year)
+        assertEquals(2023, districts[1].year)
+        assertEquals(2022, districts[2].year)
+    }
+
+    @Test
+    fun `getDistrictHistory combines equivalent abbreviations`() = runTest {
+        // CHS changed to FCH in 2026
+        val chsDtos = listOf(
+            DistrictDto(abbreviation = "chs", displayName = "FIRST Chesapeake", key = "2024chs", year = 2024),
+            DistrictDto(abbreviation = "chs", displayName = "FIRST Chesapeake", key = "2025chs", year = 2025),
+        )
+        val fchDtos = listOf(
+            DistrictDto(abbreviation = "fch", displayName = "FIRST Chesapeake", key = "2026fch", year = 2026),
+        )
+        coEvery { api.getDistrictHistory("chs") } returns chsDtos
+        coEvery { api.getDistrictHistory("fch") } returns fchDtos
+
+        val districts = repo.getDistrictHistory("fch")
+
+        assertEquals(listOf(2026, 2025, 2024), districts.map { it.year })
+        assertEquals(listOf("2026fch", "2025chs", "2024chs"), districts.map { it.key })
     }
 
     @Test
     fun `getDistrictHistory returns empty list when API returns empty`() = runTest {
         coEvery { api.getDistrictHistory("ne") } returns emptyList()
 
-        val years = repo.getDistrictHistory("ne")
+        val districts = repo.getDistrictHistory("ne")
 
-        assertEquals(emptyList<Int>(), years)
+        assertEquals(0, districts.size)
     }
 }
