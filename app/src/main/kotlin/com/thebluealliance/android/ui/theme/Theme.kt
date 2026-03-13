@@ -28,6 +28,9 @@ object TBAColors {
     val RPInactive = Color(0xFF9CA3AF)
     val FrcBlue = Color(0xFF0066B3)
     val FrcRed = Color(0xFFED1C24)
+
+    val AllianceRed = Color(0XFFF44336)     // From TBA Web Beta
+    val AllianceBlue = Color(0XFF007CFF)    // From TBA Web Beta
 }
 
 private val LightColorScheme = lightColorScheme(
