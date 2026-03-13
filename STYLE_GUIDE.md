@@ -60,18 +60,18 @@ These match the TBA web server CSS variables (`tba_variables.less`).
 
 All brand blues are drawn from the Material Design Indigo scale:
 
-| Shade | Hex       | Token             | Usage                                    |
-|-------|-----------|-------------------|------------------------------------------|
-| 50    | `#E8EAF6` | —                 | Reserved (not currently used)            |
-| 100   | `#C5CAE9` | `TBAPastelBlue`   | Light-mode `primaryContainer`            |
-| 200   | `#9FA8DA` | `TBABlueLight`    | Dark-mode `primary`                      |
-| 300   | `#7986CB` | —                 | Reserved                                 |
-| 400   | `#5C6BC0` | `TBAIndigo400`    | Section headers (lighter than TopAppBar) |
-| 500   | `#3F51B5` | `TBABlue`         | Canonical brand color, TopAppBar         |
-| 600   | `#3949AB` | —                 | Reserved                                 |
-| 700   | `#303F9F` | `TBABlueDark`     | Dark-mode `primaryContainer`             |
-| 800   | `#283593` | —                 | Reserved                                 |
-| 900   | `#1A237E` | `TBAIndigo900`    | Light-mode `onPrimaryContainer`          |
+| Shade | Hex       | Token           | Usage                                    |
+|-------|-----------|-----------------|------------------------------------------|
+| 50    | `#E8EAF6` | `TBABlueFaint`  | Reserved (not currently used)            |
+| 100   | `#C5CAE9` | `TBAPastelBlue` | Light-mode `primaryContainer`            |
+| 200   | `#9FA8DA` | `TBABlueLight`  | Dark-mode `primary`                      |
+| 300   | `#7986CB` | —               | Reserved                                 |
+| 400   | `#5C6BC0` | `TBAIndigo400`  | Section headers (lighter than TopAppBar) |
+| 500   | `#3F51B5` | `TBABlue`       | Canonical brand color, TopAppBar         |
+| 600   | `#3949AB` | —               | Reserved                                 |
+| 700   | `#303F9F` | `TBABlueDark`   | Dark-mode `primaryContainer`             |
+| 800   | `#283593` | —               | Reserved                                 |
+| 900   | `#1A237E` | `TBABlueDarker` | Light-mode `onPrimaryContainer`          |
 
 ### Material 3 color role mappings
 
@@ -88,14 +88,14 @@ All brand blues are drawn from the Material Design Indigo scale:
 
 **Dark scheme:**
 
-| Role                 | Value       | Source        |
-|----------------------|-------------|---------------|
-| `primary`            | `#9FA8DA`   | Indigo 200    |
-| `onPrimary`          | `#00174D`   |               |
-| `primaryContainer`   | `#303F9F`   | Indigo 700    |
-| `onPrimaryContainer` | `#C5CAE9`   | Indigo 100    |
-| `surfaceTint`        | `#9FA8DA`   | Indigo 200    |
-| Other roles          | M3 defaults |               |
+| Role                 | Value       | Source     |
+|----------------------|-------------|------------|
+| `primary`            | `#9FA8DA`   | Indigo 200 |
+| `onPrimary`          | `#00174D`   | Sapphire   |
+| `primaryContainer`   | `#303F9F`   | Indigo 700 |
+| `onPrimaryContainer` | `#C5CAE9`   | Indigo 100 |
+| `surfaceTint`        | `#9FA8DA`   | Indigo 200 |
+| Other roles          | M3 defaults |            |
 
 **TopAppBar** uses `TBABlue` (`#3F51B5`) with white content in both light and dark mode via `TBATopAppBar`.
 

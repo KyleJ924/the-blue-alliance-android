@@ -47,6 +47,7 @@ import com.thebluealliance.android.ui.components.MediaGridItem
 import com.thebluealliance.android.ui.components.MediaGridRow
 import com.thebluealliance.android.ui.components.TBATopAppBar
 import com.thebluealliance.android.ui.components.mediaUrl
+import com.thebluealliance.android.ui.theme.TBAColors
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -385,7 +386,7 @@ private fun RpDots(bonuses: List<Boolean>, achievedColor: Color) {
                     )
                 } else {
                     drawCircle(
-                        color = Color(0xFF9CA3AF),
+                        color = TBAColors.RPInactive,
                         radius = size.minDimension / 2 - 1.dp.toPx(),
                         style = Stroke(width = 1.dp.toPx()),
                     )

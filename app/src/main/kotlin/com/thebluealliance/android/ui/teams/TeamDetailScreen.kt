@@ -83,6 +83,7 @@ import com.thebluealliance.android.ui.components.MediaTab
 import com.thebluealliance.android.ui.components.NotificationPreferencesSheet
 import com.thebluealliance.android.ui.components.TBATabRow
 import com.thebluealliance.android.ui.components.TBATopAppBar
+import com.thebluealliance.android.ui.theme.TBAColors
 import kotlinx.coroutines.launch
 
 private val TABS = listOf("Info", "Events", "Media")
@@ -324,7 +325,7 @@ private fun InfoTab(
                     }
                     if (bitmap != null) {
                         var showRed by remember { mutableStateOf(false) }
-                        val bgColor = if (showRed) FrcRed else FrcBlue
+                        val bgColor = if (showRed) TBAColors.FrcRed else TBAColors.FrcBlue
                         Box(
                             modifier = Modifier
                                 .size(64.dp)
@@ -457,7 +458,3 @@ private fun EventsTab(
         }
     }
 }
-
-private val FrcBlue = Color(0xFF0066B3)
-private val FrcRed = Color(0xFFED1C24)
-

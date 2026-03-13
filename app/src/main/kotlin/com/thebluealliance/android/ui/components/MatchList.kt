@@ -37,6 +37,7 @@ import com.thebluealliance.android.domain.getShortLabel
 import com.thebluealliance.android.domain.model.Match
 import com.thebluealliance.android.domain.model.PlayoffType
 import com.thebluealliance.android.domain.rpBonuses
+import com.thebluealliance.android.ui.theme.TBAColors
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -275,7 +276,7 @@ private fun RpDots(bonuses: List<Boolean>, achievedColor: Color) {
                     )
                 } else {
                     drawCircle(
-                        color = Color(0xFF9CA3AF),
+                        color = TBAColors.RPInactive,
                         radius = size.minDimension / 2 - 1.dp.toPx(),
                         style = Stroke(width = 1.dp.toPx()),
                     )
@@ -284,4 +285,3 @@ private fun RpDots(bonuses: List<Boolean>, achievedColor: Color) {
         }
     }
 }
-

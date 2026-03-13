@@ -17,19 +17,24 @@ import androidx.compose.ui.platform.LocalContext
 object TBAColors {
     val TBABlue = Color(0xFF3F51B5)           // Indigo 500
     val TBABlueDark = Color(0xFF303F9F)       // Indigo 700
+    val TBABlueDarker = Color(0xFF1A237E)     // Indigo 900
     val TBABlueLight = Color(0xFF9FA8DA)      // Indigo 200
     val TBAPastelBlue = Color(0xFFC5CAE9)     // Indigo 100
     val TBAIndigo400 = Color(0xFF5C6BC0)      // Indigo 400
-    val TBAIndigo900 = Color(0xFF1A237E)      // Indigo 900
     val TBARed = Color(0xFF770000)            // Debug/beta
     val TBARedDark = Color(0xFF440000)        // Debug/beta dark
+
+    // Other UI colors
+    val RPInactive = Color(0xFF9CA3AF)
+    val FrcBlue = Color(0xFF0066B3)
+    val FrcRed = Color(0xFFED1C24)
 }
 
 private val LightColorScheme = lightColorScheme(
     primary = TBAColors.TBABlue,
     onPrimary = Color.White,
     primaryContainer = TBAColors.TBAPastelBlue,
-    onPrimaryContainer = TBAColors.TBAIndigo900,
+    onPrimaryContainer = TBAColors.TBABlueDarker,
     surfaceTint = TBAColors.TBABlue,
 )
 
