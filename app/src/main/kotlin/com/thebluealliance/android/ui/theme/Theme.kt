@@ -11,28 +11,34 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
-// Indigo tonal scale — TBA brand palette
-val TBABlue = Color(0xFF3F51B5)           // Indigo 500 — canonical TBA brand color
-val TBAIndigo400 = Color(0xFF5C6BC0)      // Indigo 400 — section headers
-private val TBABlueDark = Color(0xFF303F9F)    // Indigo 700 — dark-mode container
-private val TBABlueLight = Color(0xFF9FA8DA)   // Indigo 200 — dark-mode primary
-private val TBAPastelBlue = Color(0xFFC5CAE9)  // Indigo 100 — light-mode primaryContainer
-private val TBAIndigo900 = Color(0xFF1A237E)   // Indigo 900 — onPrimaryContainer
+/**
+ * TBA brand colors as defined in the style guide.
+ */
+object TBAColors {
+    val TBABlue = Color(0xFF3F51B5)           // Indigo 500
+    val TBABlueDark = Color(0xFF303F9F)       // Indigo 700
+    val TBABlueLight = Color(0xFF9FA8DA)      // Indigo 200
+    val TBAPastelBlue = Color(0xFFC5CAE9)     // Indigo 100
+    val TBAIndigo400 = Color(0xFF5C6BC0)      // Indigo 400
+    val TBAIndigo900 = Color(0xFF1A237E)      // Indigo 900
+    val TBARed = Color(0xFF770000)            // Debug/beta
+    val TBARedDark = Color(0xFF440000)        // Debug/beta dark
+}
 
 private val LightColorScheme = lightColorScheme(
-    primary = TBABlue,
+    primary = TBAColors.TBABlue,
     onPrimary = Color.White,
-    primaryContainer = TBAPastelBlue,
-    onPrimaryContainer = TBAIndigo900,
-    surfaceTint = TBABlue,
+    primaryContainer = TBAColors.TBAPastelBlue,
+    onPrimaryContainer = TBAColors.TBAIndigo900,
+    surfaceTint = TBAColors.TBABlue,
 )
 
 private val DarkColorScheme = darkColorScheme(
-    primary = TBABlueLight,
+    primary = TBAColors.TBABlueLight,
     onPrimary = Color(0xFF00174D),
-    primaryContainer = TBABlueDark,
-    onPrimaryContainer = TBAPastelBlue,
-    surfaceTint = TBABlueLight,
+    primaryContainer = TBAColors.TBABlueDark,
+    onPrimaryContainer = TBAColors.TBAPastelBlue,
+    surfaceTint = TBAColors.TBABlueLight,
 )
 
 @Composable

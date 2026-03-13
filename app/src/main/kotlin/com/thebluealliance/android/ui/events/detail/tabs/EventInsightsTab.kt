@@ -42,6 +42,7 @@ import com.thebluealliance.android.domain.model.EventCOPRs
 import com.thebluealliance.android.domain.model.EventInsights
 import com.thebluealliance.android.domain.model.EventOPRs
 import com.thebluealliance.android.ui.common.LoadingBox
+import com.thebluealliance.android.ui.theme.TBAColors
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonObject
@@ -322,7 +323,7 @@ private fun InsightsView(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color(0xFF5C6BC0))
+                    .background(TBAColors.TBAIndigo400)
                     .padding(horizontal = 16.dp, vertical = 8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -482,7 +483,7 @@ private fun StandardOPRsView(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color(0xFF5C6BC0))
+                    .background(TBAColors.TBAIndigo400)
                     .padding(horizontal = 16.dp, vertical = 8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -638,7 +639,7 @@ private fun COPRView(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color(0xFF5C6BC0))
+                    .background(TBAColors.TBAIndigo400)
                     .padding(horizontal = 16.dp, vertical = 8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {

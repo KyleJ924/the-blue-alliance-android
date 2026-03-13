@@ -64,7 +64,7 @@ import com.thebluealliance.android.ui.events.detail.tabs.EventInsightsTab
 import com.thebluealliance.android.ui.events.detail.tabs.EventMatchesTab
 import com.thebluealliance.android.ui.events.detail.tabs.EventRankingsTab
 import com.thebluealliance.android.ui.events.detail.tabs.EventTeamsTab
-import com.thebluealliance.android.ui.theme.TBABlue
+import com.thebluealliance.android.ui.theme.TBAColors
 import kotlinx.coroutines.launch
 
 private val TABS = listOf("Info", "Teams", "Rankings", "Matches", "Alliances", "Insights", "District points", "Awards")
@@ -235,7 +235,7 @@ fun EventDetailScreen(
                 PrimaryScrollableTabRow(
                     selectedTabIndex = pagerState.currentPage,
                     edgePadding = 0.dp,
-                    containerColor = TBABlue,
+                    containerColor = TBAColors.TBABlue,
                     contentColor = Color.White,
                     divider = {
                         HorizontalDivider(color = Color.White.copy(alpha = 0.12f))

@@ -39,6 +39,7 @@ import com.thebluealliance.android.domain.model.Ranking
 import com.thebluealliance.android.domain.model.RankingSortOrder
 import com.thebluealliance.android.ui.common.EmptyBox
 import com.thebluealliance.android.ui.common.LoadingBox
+import com.thebluealliance.android.ui.theme.TBAColors
 import java.util.Locale
 
 enum class RankingSortColumn {
@@ -159,7 +160,7 @@ private fun RankingHeaderRow(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Color(0xFF5C6BC0))
+            .background(TBAColors.TBAIndigo400)
             .padding(horizontal = 16.dp, vertical = 12.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {

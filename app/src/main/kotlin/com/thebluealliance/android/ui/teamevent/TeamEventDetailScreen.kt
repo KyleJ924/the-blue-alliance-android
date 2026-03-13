@@ -58,6 +58,7 @@ import com.thebluealliance.android.ui.components.MediaTab
 import com.thebluealliance.android.ui.components.TBATabRow
 import com.thebluealliance.android.ui.components.TBATopAppBar
 import com.thebluealliance.android.ui.components.TeamRow
+import com.thebluealliance.android.ui.theme.TBAColors
 import kotlinx.coroutines.launch
 
 private val TABS = listOf("Summary", "Matches", "Media", "Stats", "Awards")
@@ -291,7 +292,7 @@ private fun SummaryTab(
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color(0xFF5C6BC0))
+                        .background(TBAColors.TBAIndigo400)
                         .padding(horizontal = 16.dp, vertical = 8.dp),
                 ) {
                     Text(
@@ -385,7 +386,7 @@ private fun SummaryTab(
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color(0xFF5C6BC0))
+                            .background(TBAColors.TBAIndigo400)
                             .padding(horizontal = 16.dp, vertical = 8.dp),
                     ) {
                         Text(

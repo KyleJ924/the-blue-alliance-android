@@ -60,18 +60,18 @@ These match the TBA web server CSS variables (`tba_variables.less`).
 
 All brand blues are drawn from the Material Design Indigo scale:
 
-| Shade | Hex       | Token              | Usage                                    |
-|-------|-----------|--------------------|------------------------------------------|
-| 50    | `#E8EAF6` | —                  | Reserved (not currently used)            |
-| 100   | `#C5CAE9` | `TBAPastelBlue`    | Light-mode `primaryContainer`            |
-| 200   | `#9FA8DA` | `TBABlueLight`     | Dark-mode `primary`                      |
-| 300   | `#7986CB` | —                  | Reserved                                 |
-| 400   | `#5C6BC0` | —                  | Section headers (lighter than TopAppBar) |
-| 500   | `#3F51B5` | `TBABlue`          | Canonical brand color, TopAppBar         |
-| 600   | `#3949AB` | —                  | Reserved                                 |
-| 700   | `#303F9F` | `TBABlueDark`      | Dark-mode `primaryContainer`             |
-| 800   | `#283593` | —                  | Reserved                                 |
-| 900   | `#1A237E` | `TBAIndigo900`     | Light-mode `onPrimaryContainer`          |
+| Shade | Hex       | Token             | Usage                                    |
+|-------|-----------|-------------------|------------------------------------------|
+| 50    | `#E8EAF6` | —                 | Reserved (not currently used)            |
+| 100   | `#C5CAE9` | `TBAPastelBlue`   | Light-mode `primaryContainer`            |
+| 200   | `#9FA8DA` | `TBABlueLight`    | Dark-mode `primary`                      |
+| 300   | `#7986CB` | —                 | Reserved                                 |
+| 400   | `#5C6BC0` | `TBAIndigo400`    | Section headers (lighter than TopAppBar) |
+| 500   | `#3F51B5` | `TBABlue`         | Canonical brand color, TopAppBar         |
+| 600   | `#3949AB` | —                 | Reserved                                 |
+| 700   | `#303F9F` | `TBABlueDark`     | Dark-mode `primaryContainer`             |
+| 800   | `#283593` | —                 | Reserved                                 |
+| 900   | `#1A237E` | `TBAIndigo900`    | Light-mode `onPrimaryContainer`          |
 
 ### Material 3 color role mappings
 

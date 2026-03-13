@@ -39,6 +39,7 @@ import androidx.compose.material3.PrimaryScrollableTabRow
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRowDefaults
+import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
@@ -70,7 +71,7 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.DisposableEffect
 import com.thebluealliance.android.ui.components.TBATopAppBar
-import com.thebluealliance.android.ui.theme.TBABlue
+import com.thebluealliance.android.ui.theme.TBAColors
 import kotlinx.coroutines.flow.Flow
 
 private val TABS = listOf("Favorites", "Notifications")
@@ -223,7 +224,7 @@ fun MyTBAScreen(
             PrimaryScrollableTabRow(
                 selectedTabIndex = pagerState.currentPage,
                 edgePadding = 0.dp,
-                containerColor = Color(0xFF5C6BC0),
+                containerColor = TBAColors.TBAIndigo400,
                 contentColor = Color.White,
                 divider = {
                     HorizontalDivider(color = Color.White.copy(alpha = 0.12f))
