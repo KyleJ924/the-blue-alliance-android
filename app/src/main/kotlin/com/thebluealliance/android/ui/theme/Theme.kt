@@ -97,7 +97,7 @@ fun TBATheme(
     val allianceColors = if (darkTheme) {
         AllianceColors(red = TBAColors.AllianceRedDark, blue = TBAColors.AllianceBlue)
     } else {
-        AllianceColors(red = TBAColors.TBARed, blue = TBAColors.AllianceBlue)
+        AllianceColors(red = TBAColors.TBARed, blue = TBAColors.TBABlueDark)
     }
 
     CompositionLocalProvider(LocalAllianceColors provides allianceColors) {
