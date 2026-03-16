@@ -60,8 +60,7 @@ import com.thebluealliance.android.ui.components.EventRow
 import com.thebluealliance.android.ui.components.FastScrollbar
 import com.thebluealliance.android.ui.components.TBATopAppBar
 import com.thebluealliance.android.ui.components.TopBarYearPicker
-import com.thebluealliance.android.ui.theme.TBABlue
-import com.thebluealliance.android.ui.theme.TBAIndigo400
+import com.thebluealliance.android.ui.theme.TBAColors
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import java.time.LocalDate
@@ -365,7 +364,7 @@ private fun WeekFilterChips(
         containerColor = Color.Transparent,
         labelColor = Color.White.copy(alpha = 0.7f),
         selectedContainerColor = Color.White,
-        selectedLabelColor = TBABlue,
+        selectedLabelColor = TBAColors.TBABlue,
     )
     val weekChipBorder = FilterChipDefaults.filterChipBorder(
         enabled = true,
@@ -377,7 +376,7 @@ private fun WeekFilterChips(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .background(TBABlue)
+            .background(TBAColors.TBABlue)
             .layout { measurable, constraints ->
                 val placeable = measurable.measure(constraints)
                 val overlapPx = 4.dp.roundToPx()
@@ -426,8 +425,8 @@ private fun WeekFilterChips(
                                 drawRect(
                                     brush = Brush.horizontalGradient(
                                         colorStops = arrayOf(
-                                            0f to TBABlue,
-                                            solidZone / totalWidth to TBABlue,
+                                            0f to TBAColors.TBABlue,
+                                            solidZone / totalWidth to TBAColors.TBABlue,
                                             1f to Color.Transparent,
                                         ),
                                         endX = totalWidth,
@@ -464,7 +463,7 @@ private fun SimpleSectionHeader(label: String) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(TBAIndigo400)
+            .background(TBAColors.TBAIndigo400)
             .padding(horizontal = 16.dp, vertical = 8.dp)
     ) {
         Text(

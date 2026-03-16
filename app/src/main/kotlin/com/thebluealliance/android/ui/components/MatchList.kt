@@ -37,6 +37,7 @@ import com.thebluealliance.android.domain.getShortLabel
 import com.thebluealliance.android.domain.model.Match
 import com.thebluealliance.android.domain.model.PlayoffType
 import com.thebluealliance.android.domain.rpBonuses
+import com.thebluealliance.android.ui.theme.LocalAllianceColors
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -165,6 +166,7 @@ fun MatchItem(
 ) {
     val label = match.getShortLabel(playoffType)
     val isPlayed = match.redScore >= 0
+    val allianceColors = LocalAllianceColors.current
 
     val rpBonuses = remember(match.scoreBreakdown) { match.rpBonuses() }
 
@@ -187,13 +189,13 @@ fun MatchItem(
                 text = match.redTeamKeys.joinToString(", ") { it.removePrefix("frc") },
                 style = MaterialTheme.typography.bodyMedium,
                 fontWeight = if (match.winningAlliance == "red") FontWeight.Bold else FontWeight.Normal,
-                color = MaterialTheme.colorScheme.error,
+                color = allianceColors.red,
             )
             Text(
                 text = match.blueTeamKeys.joinToString(", ") { it.removePrefix("frc") },
                 style = MaterialTheme.typography.bodyMedium,
                 fontWeight = if (match.winningAlliance == "blue") FontWeight.Bold else FontWeight.Normal,
-                color = MaterialTheme.colorScheme.primary,
+                color = allianceColors.blue,
             )
         }
         if (isPlayed) {
@@ -202,8 +204,8 @@ fun MatchItem(
                     horizontalAlignment = Alignment.End,
                     verticalArrangement = Arrangement.spacedBy(3.dp),
                 ) {
-                    RpDots(rpBonuses.red, MaterialTheme.colorScheme.error)
-                    RpDots(rpBonuses.blue, MaterialTheme.colorScheme.primary)
+                    RpDots(rpBonuses.red, allianceColors.red)
+                    RpDots(rpBonuses.blue, allianceColors.blue)
                 }
             }
             Column(
@@ -214,13 +216,13 @@ fun MatchItem(
                     text = match.redScore.toString(),
                     style = MaterialTheme.typography.bodyMedium,
                     fontWeight = if (match.winningAlliance == "red") FontWeight.Bold else FontWeight.Normal,
-                    color = MaterialTheme.colorScheme.error,
+                    color = allianceColors.red,
                 )
                 Text(
                     text = match.blueScore.toString(),
                     style = MaterialTheme.typography.bodyMedium,
                     fontWeight = if (match.winningAlliance == "blue") FontWeight.Bold else FontWeight.Normal,
-                    color = MaterialTheme.colorScheme.primary,
+                    color = allianceColors.blue,
                 )
             }
         } else {
@@ -284,4 +286,3 @@ private fun RpDots(bonuses: List<Boolean>, achievedColor: Color) {
         }
     }
 }
-

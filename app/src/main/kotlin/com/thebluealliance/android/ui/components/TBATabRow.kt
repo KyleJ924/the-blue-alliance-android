@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.thebluealliance.android.ui.theme.TBABlue
+import com.thebluealliance.android.ui.theme.TBAColors
 
 @Composable
 fun TBATabRow(
@@ -19,7 +19,7 @@ fun TBATabRow(
     PrimaryScrollableTabRow(
         selectedTabIndex = selectedTabIndex,
         modifier = modifier,
-        containerColor = TBABlue,
+        containerColor = TBAColors.TBABlue,
         contentColor = Color.White,
         edgePadding = 0.dp,
         divider = {

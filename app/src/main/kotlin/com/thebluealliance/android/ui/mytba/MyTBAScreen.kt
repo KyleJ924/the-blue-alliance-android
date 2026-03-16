@@ -70,7 +70,7 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.DisposableEffect
 import com.thebluealliance.android.ui.components.TBATopAppBar
-import com.thebluealliance.android.ui.theme.TBABlue
+import com.thebluealliance.android.ui.theme.TBAColors
 import kotlinx.coroutines.flow.Flow
 
 private val TABS = listOf("Favorites", "Notifications")

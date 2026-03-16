@@ -47,6 +47,7 @@ import com.thebluealliance.android.ui.components.MediaGridItem
 import com.thebluealliance.android.ui.components.MediaGridRow
 import com.thebluealliance.android.ui.components.TBATopAppBar
 import com.thebluealliance.android.ui.components.mediaUrl
+import com.thebluealliance.android.ui.theme.LocalAllianceColors
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -243,6 +244,7 @@ private fun EventInfo(
 @Composable
 private fun ScoreSummary(match: Match) {
     val rpBonuses = remember(match.scoreBreakdown) { match.rpBonuses() }
+    val allianceColors = LocalAllianceColors.current
 
     Row(
         modifier = Modifier
@@ -254,15 +256,15 @@ private fun ScoreSummary(match: Match) {
             modifier = Modifier.weight(1f),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Text("Red", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.error)
+            Text("Red", style = MaterialTheme.typography.titleSmall, color = allianceColors.red)
             Text(
                 text = if (match.redScore < 0) "—" else match.redScore.toString(),
                 style = MaterialTheme.typography.displaySmall,
                 fontWeight = if (match.winningAlliance == "red") FontWeight.Bold else FontWeight.Normal,
-                color = MaterialTheme.colorScheme.error,
+                color = allianceColors.red,
             )
             if (rpBonuses != null) {
-                RpDots(rpBonuses.red, MaterialTheme.colorScheme.error)
+                RpDots(rpBonuses.red, allianceColors.red)
             }
         }
         Text(
@@ -274,15 +276,15 @@ private fun ScoreSummary(match: Match) {
             modifier = Modifier.weight(1f),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Text("Blue", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
+            Text("Blue", style = MaterialTheme.typography.titleSmall, color = allianceColors.blue)
             Text(
                 text = if (match.blueScore < 0) "—" else match.blueScore.toString(),
                 style = MaterialTheme.typography.displaySmall,
                 fontWeight = if (match.winningAlliance == "blue") FontWeight.Bold else FontWeight.Normal,
-                color = MaterialTheme.colorScheme.primary,
+                color = allianceColors.blue,
             )
             if (rpBonuses != null) {
-                RpDots(rpBonuses.blue, MaterialTheme.colorScheme.primary)
+                RpDots(rpBonuses.blue, allianceColors.blue)
             }
         }
     }
@@ -294,6 +296,7 @@ private fun AllianceTeams(
     blueTeamKeys: List<String>,
     onTeamClick: (String) -> Unit,
 ) {
+    val allianceColors = LocalAllianceColors.current
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -307,7 +310,7 @@ private fun AllianceTeams(
                 Text(
                     text = key.removePrefix("frc"),
                     style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.error,
+                    color = allianceColors.red,
                     modifier = Modifier
                         .clickable { onTeamClick(key) }
                         .padding(top = 2.dp),
@@ -331,7 +334,7 @@ private fun AllianceTeams(
                 Text(
                     text = key.removePrefix("frc"),
                     style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.primary,
+                    color = allianceColors.blue,
                     modifier = Modifier
                         .clickable { onTeamClick(key) }
                         .padding(top = 2.dp),
@@ -343,6 +346,7 @@ private fun AllianceTeams(
 
 @Composable
 private fun BreakdownRow(label: String, redValue: String, blueValue: String) {
+    val allianceColors = LocalAllianceColors.current
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -352,7 +356,7 @@ private fun BreakdownRow(label: String, redValue: String, blueValue: String) {
         Text(
             text = redValue,
             style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.error,
+            color = allianceColors.red,
             modifier = Modifier.weight(0.2f),
             textAlign = TextAlign.Center,
         )
@@ -365,7 +369,7 @@ private fun BreakdownRow(label: String, redValue: String, blueValue: String) {
         Text(
             text = blueValue,
             style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.primary,
+            color = allianceColors.blue,
             modifier = Modifier.weight(0.2f),
             textAlign = TextAlign.Center,
         )

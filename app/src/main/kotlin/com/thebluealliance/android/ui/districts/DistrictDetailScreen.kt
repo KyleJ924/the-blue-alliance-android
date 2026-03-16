@@ -50,7 +50,7 @@ import com.thebluealliance.android.ui.components.TBATopAppBar
 import com.thebluealliance.android.ui.components.TopBarYearPicker
 import com.thebluealliance.android.ui.events.EventSection
 import com.thebluealliance.android.ui.events.computeThisWeekEvents
-import com.thebluealliance.android.ui.theme.TBAIndigo400
+import com.thebluealliance.android.ui.theme.TBAColors
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 
@@ -283,7 +283,7 @@ private fun RankingsTab(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(TBAIndigo400)
+                    .background(TBAColors.TBAIndigo400)
                     .padding(horizontal = 16.dp, vertical = 4.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {

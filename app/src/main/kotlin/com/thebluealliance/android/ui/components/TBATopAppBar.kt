@@ -17,7 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.thebluealliance.android.R
-import com.thebluealliance.android.ui.theme.TBABlue
+import com.thebluealliance.android.ui.theme.TBAColors
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -28,7 +28,7 @@ fun TBATopAppBar(
     actions: @Composable RowScope.() -> Unit = {},
     windowInsets: androidx.compose.foundation.layout.WindowInsets = TopAppBarDefaults.windowInsets,
     colors: TopAppBarColors = TopAppBarDefaults.topAppBarColors(
-        containerColor = TBABlue,
+        containerColor = TBAColors.TBABlue,
         titleContentColor = Color.White,
         navigationIconContentColor = Color.White,
         actionIconContentColor = Color.White,

@@ -46,7 +46,7 @@ import androidx.glance.state.PreferencesGlanceStateDefinition
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import com.thebluealliance.android.ui.theme.TBATheme
-import com.thebluealliance.android.ui.theme.TBABlue
+import com.thebluealliance.android.ui.theme.TBAColors
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 
@@ -86,7 +86,7 @@ class TeamTrackingWidgetConfigActivity : ComponentActivity() {
                             Row(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .background(TBABlue)
+                                    .background(TBAColors.TBABlue)
                                     .padding(start = 16.dp, end = 4.dp, top = 4.dp, bottom = 4.dp),
                                 verticalAlignment = Alignment.CenterVertically,
                             ) {
